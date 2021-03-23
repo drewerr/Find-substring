@@ -55,7 +55,7 @@ knut_morris_pratt what wher = findSubstring what wher (makeprefix what)
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
 makeDict :: B.ByteString -> Map Int Int
-makeDict what = M.fromList [ if (B.elem (chr i) what) then (fromEnum (B.index what (fromMaybe 0 $ (B.elemIndexEnd (chr i) what))), B.length what - (fromMaybe 0 $ (B.elemIndexEnd (chr i) what)))
+makeDict what = M.fromList [if (B.elem (chr i) what) then (fromEnum (B.index what (fromMaybe 0 $ (B.elemIndexEnd (chr i) what))), B.length what - (fromMaybe 0 $ (B.elemIndexEnd (chr i) what)))
    else (i, B.length what) | i <- [0..255]]
 
 help :: B.ByteString -> B.ByteString -> Map Int Int -> Int -> Int
